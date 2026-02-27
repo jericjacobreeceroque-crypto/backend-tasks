@@ -1,13 +1,13 @@
 import csv, json
 
-with open('employees.csv', 'r') as employees_csv:
-    csv_reader = csv.DictReader(employees_csv)
+with open('CSV to JSON/customers-10000.csv', 'r') as customers_csv:
+    csv_reader = csv.DictReader(customers_csv)
 
     lines = list(csv_reader)
     
     # for line in csv_reader:
     #     print(line)
 
-with open('converted_employees.json', 'w') as employees_json:
-    json.dump(lines, employees_json, indent=4)
+with open('CSV to JSON/json_customers.json', 'w') as customers_json:
+    json.dump(lines, customers_json, indent=4)
 

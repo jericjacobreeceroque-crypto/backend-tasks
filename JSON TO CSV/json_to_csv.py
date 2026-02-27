@@ -1,13 +1,13 @@
 import json, csv
 
-with open('employees.json', 'r') as employees_json:
-    data = json.load(employees_json)
-    fieldNames = ['first_name', 'last_name', 'city']
+with open('JSON to CSV/titanic_passengers.json', 'r') as passengers_json:
+    data = json.load(passengers_json)
+    fieldNames = ['PassengerId', 'Survived', 'Pclass', 'Name', 'Sex', 'Age', 'SibSp', 'Parch', 'Ticket', 'Fare', 'Cabin', 'Embarked']
 
-    print(data)
+    # print(data)
 
-with open('csv_employees.csv', 'w', newline='') as employees_csv:
-    csv_writer = csv.DictWriter(employees_csv, fieldnames=fieldNames)
+with open('JSON to CSV/csv_titanic_passengers.csv', 'w', newline='') as passenger_csv:
+    csv_writer = csv.DictWriter(passenger_csv, fieldnames=fieldNames)
 
     csv_writer.writeheader()
     csv_writer.writerows(data)
